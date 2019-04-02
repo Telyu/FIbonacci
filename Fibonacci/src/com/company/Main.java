@@ -1,26 +1,19 @@
 package com.company;
 
 import java.util.Scanner;
-
 public class Main {
+
+
     public static void main(String[] args) {
-	// write your code here
+        new Main().calc(317811, 1);
+    }
 
-        Scanner ucok = new Scanner(System.in);
-        int i = 1, t1 = 0, t2 = 1;
-        System.out.println("Input Jumlah Angka Fibonacci: ");
-        int n = ucok.nextInt();
-        System.out.print("\nFirst " + n + " terms: \n");
-
-        while (i <= n)
-        {
-            System.out.print(t1 + " ");
-
-            int sum = t1 + t2;
-            t1 = t2;
-            t2 = sum;
-
-            i++;
+    public void calc(Integer start, Integer end) {
+        Integer f = (int) (start / ((1 + Math.sqrt(5)) / 2));
+        System.out.println(f);
+        if (f == end) {
+            return;
         }
+        calc(++f, end);
     }
 }
